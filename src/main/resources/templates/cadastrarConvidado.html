@@ -15,13 +15,20 @@
 </head>
 <body>
 	<div class="container">
+	<div class="row">
+		<div class="col-12">
+			<h1 class="text-center">Gestão Festa</h1>
+		</div>
+	</div>
 		<div class="row">
 			<div class="col-12">
 				<div class="card">
 					<div class="card-header">
-						<h3>Cadastrar um Convidado</h3>
+						<h5>Cadastrar um Convidado</h5>
 					</div>
 					<div class="card-body">
+					
+					<a th:href="@{/convidados}" class="btn btn-secondary">< Voltar</a>
 						<form method="POST" style="margin: 20px 0"
 							th:object="${convidado}" th:action="@{/convidados/novo}">
 							<div class="form-group">

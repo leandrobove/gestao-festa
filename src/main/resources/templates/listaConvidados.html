@@ -15,6 +15,11 @@
 </head>
 <body>
 	<div class="container">
+	<div class="row">
+		<div class="col-12">
+			<h1 class="text-center">Gestão Festa</h1>
+		</div>
+	</div>
 		<div class="row">
 			<div class="col-12">
 				<div th:each="message : ${msg}">
@@ -30,7 +35,7 @@
 
 				<div class="card">
 					<div class="card-header">
-						<h3>Lista de Convidados</h3>
+						<h5>Lista de Convidados</h5>
 					</div>
 					<div class="card-body">
 						<a th:href="@{/convidados/cadastrar}" class="btn btn-primary">Cadastrar
