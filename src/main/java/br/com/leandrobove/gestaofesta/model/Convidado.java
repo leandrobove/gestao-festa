@@ -8,23 +8,23 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Convidado implements Serializable{
+public class Convidado implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
-	private Integer quantidadeDeConvidados;
+	private Integer quantidadeDeAcompanhantes;
 
 	public Convidado() {
 	}
 
-	public Convidado(Long id, String nome, Integer quantidadeDeConvidados) {
+	public Convidado(Long id, String nome, Integer quantidadeDeAcompanhantes) {
 		this.id = id;
 		this.nome = nome;
-		this.quantidadeDeConvidados = quantidadeDeConvidados;
+		this.quantidadeDeAcompanhantes = quantidadeDeAcompanhantes;
 	}
 
 	public Long getId() {
@@ -43,17 +43,17 @@ public class Convidado implements Serializable{
 		this.nome = nome;
 	}
 
-	public Integer getQuantidadeDeConvidados() {
-		return quantidadeDeConvidados;
+	public Integer getQuantidadeDeAcompanhantes() {
+		return quantidadeDeAcompanhantes;
 	}
 
-	public void setQuantidadeDeConvidados(Integer quantidadeDeConvidados) {
-		this.quantidadeDeConvidados = quantidadeDeConvidados;
+	public void setQuantidadeDeAcompanhantes(Integer quantidadeDeAcompanhantes) {
+		this.quantidadeDeAcompanhantes = quantidadeDeAcompanhantes;
 	}
 
 	@Override
 	public String toString() {
-		return "Convidado [id=" + id + ", nome=" + nome + ", quantidadeDeConvidados=" + quantidadeDeConvidados + "]";
+		return "Convidado [id=" + id + ", nome=" + nome + ", quantidadeDeConvidados=" + quantidadeDeAcompanhantes + "]";
 	}
 
 }
