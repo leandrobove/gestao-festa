@@ -57,4 +57,13 @@ public class ConvidadoController {
 		return "redirect:/convidados";
 	}
 
+	@RequestMapping(value = "/buscarPorId", method = RequestMethod.GET)
+	public ModelAndView buscarPorIdNome(Long id) {
+		ModelAndView modelAndView = new ModelAndView("listaConvidados");
+
+		modelAndView.addObject("convidados", convidadoService.buscarPorId(id));
+
+		return modelAndView;
+	}
+
 }

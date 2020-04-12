@@ -1,7 +1,7 @@
 package br.com.leandrobove.gestaofesta.service;
 
 import java.util.List;
-import java.util.Optional;
+import java.util.NoSuchElementException;
 
 import javax.persistence.EntityManagerFactory;
 
@@ -26,11 +26,15 @@ public class ConvidadoService {
 	public void salvar(Convidado c) {
 		convidadoRepository.save(c);
 	}
-	
-	public Optional<Convidado> buscarPorId(Long id) {
-		return convidadoRepository.findById(id);
+
+	public Convidado buscarPorId(Long id) {
+		Convidado convidado = convidadoRepository.buscarPorId(id);
+		if (convidado == null) {
+			throw new NoSuchElementException("Convidado não encontrado.");
+		}
+		return convidado;
 	}
-	
+
 	public void deletar(Long id) {
 		convidadoRepository.deleteById(id);
 	}
