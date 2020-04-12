@@ -12,14 +12,15 @@
 	crossorigin="anonymous"></script>
 <script type="text/javascript"
 	th:src="@{/webjars/bootstrap/4.4.1-1/js/bootstrap.min.js}"></script>
+
 </head>
 <body>
 	<div class="container">
-	<div class="row">
-		<div class="col-12">
-			<h1 class="text-center">Gestão Festa</h1>
+		<div class="row">
+			<div class="col-12">
+				<h1 class="text-center">Gestão Festa</h1>
+			</div>
 		</div>
-	</div>
 		<div class="row">
 			<div class="col-12">
 				<div th:each="message : ${msg}">
@@ -40,21 +41,32 @@
 					<div class="card-body">
 						<a th:href="@{/convidados/cadastrar}" class="btn btn-primary">Cadastrar
 							Convidado</a>
-							
-						<table class="table">
+
+
+						<table class="table table-striped">
 							<thead>
 								<tr>
 									<th>Nome</th>
 									<th>Acompanhantes</th>
+									<th>Excluir</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr th:each="convidado : ${convidados}">
 									<td th:text="${convidado.nome}"></td>
 									<td th:text="${convidado.quantidadeDeAcompanhantes}"></td>
+									<td>
+										<form method="POST" th:action="@{/convidados/deletar}">
+											<input type="hidden" name="id" th:value="${convidado.id}" />
+											<button class="btn btn-danger">Excluir</button>
+										</form>
+
+									</td>
 								</tr>
 							</tbody>
 						</table>
+
+
 					</div>
 				</div>
 			</div>
